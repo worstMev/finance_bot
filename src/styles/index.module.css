@@ -1,0 +1,80 @@
+.container {
+  width : 1000px;
+  height : 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color : black;
+  display: flex ;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.messages {
+  height: 600px;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.message_user {
+  padding: 10px;
+  border-bottom : 1px solid lightgrey;
+  display: flex;
+  flex-direction : row;
+  justify-content : space-between;
+}
+
+
+.message_bot {
+  padding: 10px;
+  border-bottom : 1px solid lightgrey;
+  border-left : 4px solid blue;
+  display: flex;
+  flex-direction : row;
+  justify-content : space-between;
+}
+
+.message_bot button{
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  border-radius: 4px;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputContainer input {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background : white;
+  color : black;
+}
+
+.inputContainer button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.inputContainer button:hover {
+  background-color: #0056b3;
+}
+
+
+/* custom */
