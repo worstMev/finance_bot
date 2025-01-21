@@ -24,8 +24,8 @@ const Form: React.FC = () => {
     });
   };
 
-  const handleSubmit = async (event: React.MouseEventHandler<HTMLButtonElement>) => {
-    event.preventDefault();
+  const handleSubmit = async (event: any) => {
+    //event.preventDefault();
     console.log('Form submitted!', formData);
     const url = 'http://18.225.54.164:8000/predict';
     try {
