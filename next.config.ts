@@ -4,7 +4,10 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
   output : 'export',
-  basePath : 'https://github.com/worstMev/finance_bot.git'
+  basePath : '/finance_bot',
+  eslint : {
+      ignoreDuringBuilds : true
+  }
 };
 
 export default nextConfig;

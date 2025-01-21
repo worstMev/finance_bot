@@ -12,7 +12,9 @@ const Form: React.FC = () => {
     no_of_dependents: '', 
   });
 
-  const [results, setResults] = useState('')
+
+
+  const [results, setResults] = useState<any|null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -22,10 +24,10 @@ const Form: React.FC = () => {
     });
   };
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.MouseEventHandler<HTMLButtonElement>) => {
     event.preventDefault();
     console.log('Form submitted!', formData);
-    const url = 'http://52.14.214.31:8000/predict';
+    const url = 'http://18.225.54.164:8000/predict';
     try {
         const resp = await fetch(url , {method : 'POST' , 
                                         //mode: 'cors', 
@@ -111,8 +113,8 @@ const Form: React.FC = () => {
             { results &&
                 <>
                     <p> Results :  </p>
-                    <p> Eligible : { results.approved * 100 } % </p>
-                    <p> Not Eligible : { results.not_approved * 100 } % </p>
+                    <p> Eligible : { results['approved'] * 100 } % </p>
+                    <p> Not Eligible : { results['not_approved'] * 100 } % </p>
                     <button onClick = {(e) => {
                         setFormData({
                                     cibil_score : '', 
@@ -122,7 +124,7 @@ const Form: React.FC = () => {
                                     residential_assets_value: '', 
                                     no_of_dependents: '', 
                                 });
-                        setResults('');
+                        setResults(null);
 
                     }}> 
                         Reset 

@@ -3,7 +3,7 @@ import styles from '../styles/index.module.css';
 import Link from 'next/link';
 
 const ChatApp = () => {
-  const [messages, setMessages] = useState<string[]>([]);
+  const [messages, setMessages] = useState<any[]>([]);
   const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const ChatApp = () => {
 
   const sendMessage = async () => {
     //const url = 'http://localhost:8000/chat';
-    const url = 'http://52.14.214.31:8000/chat';
+    const url = 'http://18.225.54.164:8000/chat';
     if (inputValue.trim()) {
       try {
         const resp = await fetch(url , {method : 'POST' , 
